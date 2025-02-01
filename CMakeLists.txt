@@ -26,7 +26,7 @@ if (NOT raylib_FOUND OR FETCH_RAYLIB)
 endif ()
 
 set(SOURCE_FILES
-        src/main.cpp
+    src/main.cpp
         src/App.cpp
         src/App.hpp
         src/SceneManager.cpp
@@ -40,22 +40,8 @@ set(SOURCE_FILES
         src/ConfigManager.hpp
 )
 
-# Add icons
-include(${CMAKE_SOURCE_DIR}/cmake/add-icon.cmake)
-AddIcon(SOURCE_FILES ICONS ${CMAKE_SOURCE_DIR}/icons/icon.ico ${CMAKE_SOURCE_DIR}/icons/icon.icns ${CMAKE_SOURCE_DIR}/icons/icon.svg)
+add_executable(STARMAN ${SOURCE_FILES})
 
-# Define the executable target
-if (WIN32 OR CMAKE_SYSTEM_NAME STREQUAL "Windows")
-    add_executable(STARMAN WIN32 ${SOURCE_FILES})
-elseif(APPLE)
-    add_executable(STARMAN MACOSX_BUNDLE ${SOURCE_FILES})
-elseif(UNIX AND NOT APPLE)  # Linux
-    add_executable(STARMAN ${SOURCE_FILES})
-else()
-    message(FATAL_ERROR "Unsupported platform, currently we are only supporting MacOS / Windows / Linux")
-endif()
-
-# Link libraries
 target_link_libraries(STARMAN PRIVATE raylib)
 
 # macOS Frameworks
