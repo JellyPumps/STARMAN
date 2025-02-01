@@ -13,8 +13,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up CMake
-        uses: jurplel/install-cmake-actions@v2
+      - name: Install CMake
+        uses: jwlawson/actions-setup-cmake@v2
+        with:
+          cmake-version: '3.30.x'
       - name: Build with CMake
         run: |
           mkdir build
