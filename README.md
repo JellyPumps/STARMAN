@@ -5,7 +5,7 @@ A **PSX-style**, **First Person**, **Horror**, **Survival**, **Space Exploration
 Jupiter's frozen moon.
 
 After a catastrophic disaster, **Starman Orion Voss** and his scattered crew navigate the icy wasteland,
-evade deadly radiation, and as they uncover the truth beneath the icy, _It_ will watch.
+evade deadly radiation, and as they uncover the truth beneath the ice, _It_ will watch.
 
 ---
 
