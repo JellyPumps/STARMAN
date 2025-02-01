@@ -13,9 +13,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up CMake
-        uses: jurplel/install-cmake-actions@v2
-      - name: Install dependencies
+      - name: Install Cmake
         run: |
           brew install cmake
       - name: Build with CMake
