@@ -33,7 +33,6 @@ set(SOURCE_FILES
         src/SceneManager.hpp
         src/SceneMenu.cpp
         src/SceneMenu.hpp
-        src/Scene.cpp
         src/Scene.hpp
         src/SceneIntro.cpp
         src/SceneIntro.hpp
