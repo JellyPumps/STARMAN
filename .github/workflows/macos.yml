@@ -13,9 +13,9 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Cmake
+      - name: Install dependencies
         run: |
-          brew install cmake
+          brew install cmake glfw
       - name: Build with CMake
         run: |
           mkdir build
