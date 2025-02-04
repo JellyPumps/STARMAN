@@ -3,19 +3,20 @@
 //
 
 #include "App.hpp"
-
+#include <iostream>
+#include "ConfigManager.hpp"
+#include "SceneManager.hpp"
 #include <stdexcept>
+#include <raylib.h>
 
-App::App(const int width, const int height, const char *title) {
-    width_ = width;
-    height_ = height;
+App::App(const char *title) {
+    int display = GetCurrentMonitor();
+    width_ = GetMonitorWidth(display);
+    height_ = GetMonitorHeight(display);
     title_ = title;
 
     InitWindow(width_, height_, title_);
     SetTargetFPS(100);
-
-    int display = GetCurrentMonitor();
-    SetWindowSize(GetMonitorWidth(display), GetMonitorHeight(display));
 }
 
 App::~App() {
@@ -24,6 +25,15 @@ App::~App() {
 
 void App::run() const {
     SceneManager scene_manager;
+    ConfigManager config;
+
+    if (config.get_value("first_run") != "true") {
+        scene_manager.current_scene = 1;
+    } else {
+        scene_manager.current_scene = 0;
+        config.set_value("first_run", "false");
+    }
+
     while (!WindowShouldClose()) {
         scene_manager.update();
         // Draw
