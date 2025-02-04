@@ -3,12 +3,14 @@
 //
 
 #include "SceneManager.hpp"
+#include "SceneIntro.hpp"
 #include "SceneMenu.hpp"
 
 SceneManager::SceneManager() {
     // Stub, fill with scenes
     // scenes[x] = std::make_unique<SCENENAME>();
-    scenes[0] = std::make_unique<SceneMenu>();
+    scenes[0] = std::make_unique<SceneIntro>();
+    scenes[1] = std::make_unique<SceneMenu>();
 }
 
 void SceneManager::update() {

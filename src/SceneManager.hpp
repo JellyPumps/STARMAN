@@ -13,7 +13,7 @@ public:
     SceneManager();
     void update();
     void render(const int screen_width, const int screen_height) const;
+    int current_scene = 0;
 private:
     std::unique_ptr<Scene> scenes[10];
-    int current_scene = 0;
 };
