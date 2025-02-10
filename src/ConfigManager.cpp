@@ -8,12 +8,6 @@
 #include <iostream>
 
 // Platform specific includes
-
-#include <unistd.h>
-#include <pwd.h>
-#include <sys/stat.h>
-
-// Platform specific include
 #ifdef _WIN32
 #include <windows.h>
 #include <shlobj.h>
