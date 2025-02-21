@@ -41,7 +41,7 @@ std::string ConfigManager::get_config_dir() {
         // AppData / Local
         char path[MAX_PATH];
         if (SUCCEEDED(SHGetFolderPathA(NULL, CSIDL_LOCAL_APPDATA, NULL, 0, path))) {
-            config_dir = std::string(path) + "\\STARMAN\";
+            config_dir = std::string(path) + R"(\STARMAN\)";
         }
     #elif defined(__linux__) || defined(__APPLE__)
         const char *homedir = getenv("HOME");
