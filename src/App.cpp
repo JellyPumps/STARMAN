@@ -16,6 +16,7 @@ App::App(const char *title) {
     title_ = title;
 
     InitWindow(width_, height_, title_);
+    ToggleFullscreen();
     SetTargetFPS(100);
 }
 
